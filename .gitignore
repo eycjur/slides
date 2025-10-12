@@ -1,0 +1,11 @@
+.DS_Store
+old/
+mlruns/
+*.csv
+*.ipynb
+*.html
+
+images/back_cover.jpg
+images/cover.jpg
+images/section_title.jpg
+images/appendix.jpg

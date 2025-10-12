@@ -1,0 +1,302 @@
+/* @theme lt */
+@import "gaia";
+
+.column {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.column-3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.orange {
+  color: orange;
+}
+
+section.cover {
+  background-image: url("../images/cover.jpg");
+  background-size: cover;
+  background-position: center;
+
+  h1 {
+    position: absolute;
+    top: 30%;
+  }
+  h2 {
+    position: absolute;
+    top: 40%;
+  }
+  h5 {
+    position: absolute;
+    top: 40%;
+  }
+  p {
+    position: absolute;
+    top: 75%;
+  }
+}
+
+section.toc {
+  li {
+    margin-bottom: 1rem;
+  }
+}
+
+section.full_screen {
+  h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+  }
+
+  p {
+    position: relative;
+    top: 60%;
+    text-align: center;
+  }
+}
+
+section.section_title {
+  background-image: url("../images/section_title.jpg");
+  background-size: cover;
+  background-position: center;
+
+  h2 {
+    position: absolute;
+    top: 30%;
+  }
+}
+
+section.appendix {
+  background-image: url("../images/appendix.jpg");
+  background-size: cover;
+  background-position: center;
+
+  h2 {
+    position: absolute;
+    top: 30%;
+  }
+}
+
+section.back_cover {
+  background-image: url("../images/back_cover.jpg");
+  background-size: cover;
+  background-position: center;
+  align-items: center;
+
+  h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+section::after {
+  content: attr(data-marpit-pagination) " / " attr(data-marpit-pagination-total);
+}
+
+section:not(.cover, .section_title, .appendix, .back_cover) {
+  background-color: white;
+
+  h2 {
+    border-bottom: 1px solid black;
+    margin-bottom: 1rem;
+  }
+}
+
+section.leading-none * {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+section.leading-tight * {
+  margin-top: 0.15em;
+  margin-bottom: 0.15em;
+}
+
+section.leading-snug * {
+  margin-top: 0.3em;
+  margin-bottom: 0.3em;
+}
+
+section.leading-normal * {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+section.leading-relaxed * {
+  margin-top: 0.75em;
+  margin-bottom: 0.75em;
+}
+
+section.leading-loose * {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.leading-none * {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.leading-tight * {
+  margin-top: 0.15em;
+  margin-bottom: 0.15em;
+}
+
+.leading-snug * {
+  margin-top: 0.3em;
+  margin-bottom: 0.3em;
+}
+
+.leading-normal * {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.leading-relaxed * {
+  margin-top: 0.75em;
+  margin-bottom: 0.75em;
+}
+
+.leading-loose * {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  word-break: auto-phrase;
+}
+
+/* 
+for tailwind
+ul {
+  list-style-type: disc;
+  margin-left: 35px;
+}
+
+ol {
+  list-style-type: decimal;
+  margin-left: 35px;
+} */
+
+/* tailwindの上書き */
+.text-xs {
+  font-size: 0.75rem;
+}
+.text-sm {
+  font-size: 0.875rem;
+}
+.text-base {
+  font-size: 1rem;
+}
+.text-lg {
+  font-size: 1.125rem;
+}
+.text-xl {
+  font-size: 1.25rem;
+}
+.text-2xl {
+  font-size: 1.5rem;
+}
+
+.space-xs {
+  padding-top: 0.25rem;
+}
+
+.space-sm {
+  padding-top: 0.5rem;
+}
+
+.space-base {
+  padding-top: 1rem;
+}
+
+.space-lg {
+  padding-top: 1.5rem;
+}
+
+.space-xl {
+  padding-top: 2rem;
+}
+
+.space-2xl {
+  padding-top: 3rem;
+}
+
+/* 自動的にページに収まるよう調整するクラス */
+section.auto-fit {
+  container-type: size;
+
+  h1 {
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+    margin: clamp(0.1em, 1vh, 0.5em) 0;
+  }
+
+  h2 {
+    font-size: clamp(1.4rem, 3.5vw, 1.9rem);
+    margin: clamp(0.1em, 0.8vh, 0.4em) 0 clamp(0.3em, 1.5vh, 0.8em) 0;
+  }
+
+  h3 {
+    font-size: clamp(1.2rem, 3vw, 1.6rem);
+    margin: clamp(0.05em, 0.6vh, 0.3em) 0;
+  }
+
+  h4, h5, h6 {
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    margin: clamp(0.05em, 0.5vh, 0.2em) 0;
+  }
+
+  p {
+    font-size: clamp(0.85rem, 2.2vw, 1.1rem);
+    line-height: clamp(1.2, 1.5, 1.6);
+    margin: clamp(0.1em, 0.8vh, 0.4em) 0;
+  }
+
+  ul, ol {
+    font-size: clamp(0.85rem, 2.2vw, 1.1rem);
+    line-height: clamp(1.2, 1.5, 1.6);
+    margin: clamp(0.1em, 0.8vh, 0.4em) 0 clamp(0.2em, 1vh, 0.6em) 0;
+
+    li {
+      padding-top: clamp(0.05em, 0.3vh, 0.2em);
+      margin-bottom: clamp(0.05em, 0.2vh, 0.1em);
+    }
+  }
+
+  pre, code {
+    font-size: clamp(0.75rem, 2vw, 1rem);
+  }
+
+  /* 長いリストに対する追加調整 */
+  ul:has(> li:nth-child(8)), ol:has(> li:nth-child(8)) {
+    font-size: clamp(0.75rem, 2vw, 0.95rem);
+
+    li {
+      padding-top: clamp(0.02em, 0.2vh, 0.1em);
+      margin-bottom: clamp(0.02em, 0.1vh, 0.05em);
+    }
+  }
+
+  /* 多くの見出しがある場合の調整 */
+  &:has(h2:nth-child(6)), &:has(h3:nth-child(6)), &:has(h4:nth-child(6)) {
+    h2, h3, h4, h5, h6 {
+      margin: clamp(0.02em, 0.3vh, 0.15em) 0;
+    }
+  }
+}
